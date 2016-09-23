@@ -26,5 +26,15 @@ namespace MultipleModelDemo.Controllers
 
             return View();
         }
+
+        Repository _repository = new Repository();
+
+        public ActionResult ViewDataDemo()
+        {
+            ViewData["Courses"] = _repository.GetCourses();
+            ViewData["Students"] = _repository.GetStudents();
+            ViewData["Faculties"] = _repository.GetFaculties();
+            return View();
+        }
     }
 }
